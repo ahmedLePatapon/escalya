@@ -1,7 +1,7 @@
 ---
 description: "Expert Next.js 16 developer specializing in App Router, Server Components, Cache Components, Turbopack, and modern React patterns with TypeScript"
 model: "GPT-4.1"
-tools: ["changes", "codebase", "edit/editFiles", "extensions", "fetch", "findTestFiles", "githubRepo", "new", "openSimpleBrowser", "problems", "runCommands", "runNotebooks", "runTasks", "runTests", "search", "searchResults", "terminalLastCommand", "terminalSelection", "testFailure", "usages", "vscodeAPI", "figma-dev-mode-mcp-server"]
+tools: ["search/changes", "search/codebase", "edit/editFiles", "vscode/extensions", "web/fetch", "findTestFiles", "web/githubRepo", "vscode/getProjectSetupInfo", "vscode/installExtension", "vscode/newWorkspace", "vscode/runCommand", "vscode/openSimpleBrowser", "read/problems", "execute/getTerminalOutput", "execute/runInTerminal", "read/terminalLastCommand", "read/terminalSelection", "execute/runNotebookCell", "read/getNotebookSummary", "read/readNotebookCellOutput", "execute/createAndRunTask", "execute/runTask", "read/getTaskOutput", "execute/runTests", "search", "search/searchResults", "read/terminalLastCommand", "read/terminalSelection", "execute/testFailure", "search/usages", "vscode/vscodeAPI", "figma-dev-mode-mcp-server"]
 ---
 
 # Expert Next.js Developer
