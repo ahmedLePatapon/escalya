@@ -1,6 +1,6 @@
 {
   "name": "escalya",
-  "description": "**Escalya** est une plateforme de réservation de séjours d'exception tout-inclus dans les plus prestigueuses et authentiques destinations. Le projet vise à créer une expérience de voyage court haut de gamme alliant remise en forme sportive et bien-être avec une interface moderne et élégante.",
+  "description": "**Escalya** est une plateforme de réservation de séjours d'exception tout-inclus dans les plus prestigieuses et authentiques destinations. Le projet vise à créer une expérience de voyage court haut de gamme alliant remise en forme sportive et bien-être avec une interface moderne et élégante.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
