@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import type { Metadata } from "next";
@@ -29,7 +31,10 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
-      </body>
-    </html>
-  );
+        <html lang="fr" className="scroll-smooth">
+          <body className={cn(jakarta.variable, "antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50")}>
+            {children}
+          </body>
+        </html>
+        );
 }
