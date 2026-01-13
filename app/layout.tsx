@@ -37,4 +37,16 @@ export default function RootLayout({
           </body>
         </html>
         );
+        <html lang="fr" className="scroll-smooth">
+          <head>
+            <link
+              rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+            />
+          </head>
+          <body className={cn(jakarta.variable, "antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50")}>
+            {children}
+          </body>
+        </html>
+        );
 }

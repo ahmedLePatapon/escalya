@@ -5,6 +5,7 @@ import { Icon } from "@/components/ui/Icon";
 
 export default function SearchBar() {
     return (
+
         <div className="mx-auto max-w-4xl rounded-xl bg-white p-2 shadow-xl dark:bg-slate-900 md:p-4">
             <div className="flex flex-col gap-2 md:flex-row md:items-center">
                 {/* Destination */}

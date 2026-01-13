@@ -8,14 +8,19 @@ export default function Header() {
         { label: "Destinations", href: "/destinations" },
         { label: "Concept", href: "/concept" },
         { label: "Expériences", href: "/experiences" },
+        { label: "À propos", href: "/about" },
+        { label: "Contact", href: "/contact" },
     ];
 
     return (
-        <header className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80">
-            <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        <header className="fixed top-0 z-40 w-full border-b border-slate-200 bg-background-dark/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80">
+            <div className="layout-container max-w-[1280px] mx-auto flex h-16 items-center justify-between px-4">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
-                    <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Escalya</span>
+                    <div className="size-8 flex items-center justify-center text-primary dark:text-white">
+                        <span className="material-symbols-outlined text-3xl">diamond</span>
+                    </div>
+                    <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Escalya</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -96,6 +101,9 @@ export default function Header() {
             </div>
             <MobileMenu />
         </div>
+                    <Button size="sm">Réserver</Button>
+                    <MobileMenu />
+                </div >
             </div >
         </header >
     );
