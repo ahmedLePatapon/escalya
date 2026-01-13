@@ -65,8 +65,8 @@ export default function SejoursPage() {
                     <button
                         onClick={() => setViewMode("grid")}
                         className={`p-2.5 rounded-lg ${viewMode === "grid"
-                                ? "bg-primary text-white"
-                                : "bg-anthracite text-slate-400"
+                            ? "bg-primary text-white"
+                            : "bg-anthracite text-slate-400"
                             }`}
                     >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -76,8 +76,8 @@ export default function SejoursPage() {
                     <button
                         onClick={() => setViewMode("list")}
                         className={`p-2.5 rounded-lg ${viewMode === "list"
-                                ? "bg-primary text-white"
-                                : "bg-anthracite text-slate-400"
+                            ? "bg-primary text-white"
+                            : "bg-anthracite text-slate-400"
                             }`}
                     >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -126,5 +126,11 @@ export default function SejoursPage() {
                 ))}
             </div>
         </main>
-    );
-}
+export default function Page() {
+        return (
+            <div className="py-20 text-center">
+                <h1 className="text-3xl font-bold">Séjours</h1>
+                <p>En construction...</p>
+            </div>
+        );
+    }
