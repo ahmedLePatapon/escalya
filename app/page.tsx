@@ -11,11 +11,12 @@ export default function Home() {
         <main className="min-h-screen">
             <Header />
             <HeroSection />
+            <div className="h-24 bg-background-dark"></div>
             <FeaturesSection />
             <WellnessSection />
             <CollectionSection />
             <TestimonialSection />
             <Footer />
-        </main>
+        </main >
     );
 }

@@ -1,29 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
-
 @import "tailwindcss";
 
-
 @theme {
-  --font-jakarta: var(--font-jakarta);
+  /* Vos couleurs personnalisées */
+  --color-primary: #1152d4;
+  --color-background-light: #f6f6f8;
+  --color-background-dark: #101622;
+  --color-surface-dark: #1e2738;
+  --color-text-muted: #92a4c9;
 
-  /* Colors based on project needs - placeholder for customization */
-  --color-primary: #1a1a1a;
-  --color-secondary: #4a4a4a;
-  --color-accent: #d4af37; /* Gold-ish for luxury feel */
+  /* Vos polices */
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-jakarta: var(--font-jakarta); /* Pour l'intégration Next/Font */
+
+  /* Vos arrondis */
+  --radius-default: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
 }
 
 @layer base {
   body {
-    @apply font-jakarta antialiased bg-white text-gray-900;
+    /* Utilise votre variable de couleur de fond et de police */
+    @apply antialiased bg-[var(--color-background-light)] dark:bg-[var(--color-background-dark)] text-gray-900;
   }
 }
 
-/* Material Symbols Helper Class */
+/* Helper pour les icônes (déjà correct) */
 .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined'; /* Important pour forcer la police */
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  
   font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
 }
-
