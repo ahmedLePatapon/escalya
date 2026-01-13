@@ -1,45 +1,30 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
+import { Button } from "@/components/ui/Button";
+import MobileMenu from "./MobileMenu";
 
 export default function Header() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    const navLinks = [
-        { label: "Concept", href: "/concept" },
+    const links = [
         { label: "Séjours", href: "/sejours" },
-        { label: "À propos", href: "/a-propos" },
-        { label: "Contact", href: "/contact" },
+        { label: "Destinations", href: "/destinations" },
+        { label: "Concept", href: "/concept" },
+        { label: "Expériences", href: "/experiences" },
     ];
 
     return (
-        <header className="fixed top-0 w-full z-50 glass-nav border-b border-white/10">
-            <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <header className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/80">
+            <div className="container mx-auto flex h-16 items-center justify-between px-4">
                 {/* Logo */}
-                <div className="flex items-center gap-3">
-                    <div className="size-8 text-primary">
-                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                    </div>
-                    <Link href="/">
-                        <h1 className="text-2xl font-extrabold tracking-tighter text-white uppercase">
-                            Escalya
-                        </h1>
-                    </Link>
-                </div>
+                <Link href="/" className="flex items-center gap-2">
+                    <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Escalya</span>
+                </Link>
 
-                {/* Navigation Desktop */}
-                <nav className="hidden md:flex items-center gap-10">
-                    {navLinks.map((link) => (
+                {/* Desktop Nav */}
+                <nav className="hidden md:flex items-center gap-8">
+                    {links.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
-                            className="text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+                            className="text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors"
                         >
                             {link.label}
                         </Link>
@@ -84,26 +69,34 @@ export default function Header() {
                             )}
                         </svg>
                     </button>
-                </div>
-            </div>
+                </div >
+            </div >
 
             {/* Menu Mobile */}
-            {isMobileMenuOpen && (
-                <div className="md:hidden absolute top-20 left-0 right-0 glass-nav border-b border-white/10">
-                    <nav className="flex flex-col p-6 gap-4">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className="text-sm font-semibold text-slate-300 hover:text-white transition-colors"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
-                    </nav>
-                </div>
-            )}
-        </header>
+            {
+                isMobileMenuOpen && (
+                    <div className="md:hidden absolute top-20 left-0 right-0 glass-nav border-b border-white/10">
+                        <nav className="flex flex-col p-6 gap-4">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className="text-sm font-semibold text-slate-300 hover:text-white transition-colors"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </nav>
+                    </div>
+                )
+            }
+            <div className="hidden md:block">
+                <Button size="sm">Réserver</Button>
+            </div>
+            <MobileMenu />
+        </div>
+            </div >
+        </header >
     );
 }

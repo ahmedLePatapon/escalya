@@ -1,113 +1,65 @@
 import Link from "next/link";
+import { Icon } from "@/components/ui/Icon";
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear();
-
     return (
-        <footer className="bg-background-dark border-t border-white/10 py-16">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                    {/* Logo et description */}
-                    <div className="md:col-span-2">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="size-8 text-primary">
-                                <svg
-                                    fill="none"
-                                    viewBox="0 0 48 48"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                            </div>
-                            <h2 className="text-2xl font-extrabold tracking-tighter text-white uppercase">
-                                Escalya
-                            </h2>
-                        </div>
-                        <p className="text-slate-400 max-w-md">
-                            Vivez des séjours tout-inclus dans les plus prestigieux domaines et
-                            châteaux de France. Une parenthèse hors du temps orchestrée par nos
-                            experts.
+        <footer className="bg-slate-50 pt-16 pb-8 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+            <div className="container mx-auto px-4">
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-12">
+                    {/* Brand */}
+                    <div className="space-y-4">
+                        <Link href="/" className="text-xl font-bold text-slate-900 dark:text-white">Escalya</Link>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 max-w-xs">
+                            L'art de vivre d'exception. Des propriétés exclusives et des expériences inoubliables.
                         </p>
+                        <div className="flex gap-4">
+                            {['facebook', 'instagram', 'twitter'].map((social) => (
+                                <a key={social} href="#" className="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+                                    <div className="w-5 h-5 bg-slate-300 dark:bg-slate-700 rounded-full" />
+                                </a>
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Navigation rapide */}
+                    {/* Links 1 */}
                     <div>
-                        <h3 className="text-white font-bold mb-4">Navigation</h3>
-                        <ul className="space-y-2">
-                            <li>
-                                <Link
-                                    href="/concept"
-                                    className="text-slate-400 hover:text-white transition-colors"
-                                >
-                                    Notre Concept
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/sejours"
-                                    className="text-slate-400 hover:text-white transition-colors"
-                                >
-                                    Séjours
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/a-propos"
-                                    className="text-slate-400 hover:text-white transition-colors"
-                                >
-                                    À propos
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/contact"
-                                    className="text-slate-400 hover:text-white transition-colors"
-                                >
-                                    Contact
-                                </Link>
-                            </li>
+                        <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Découvrir</h3>
+                        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                            <li><Link href="/sejours">Nos Séjours</Link></li>
+                            <li><Link href="/destinations">Destinations</Link></li>
+                            <li><Link href="/concept">Le Concept</Link></li>
+                            <li><Link href="/experiences">Expériences</Link></li>
                         </ul>
                     </div>
 
-                    {/* Contact */}
+                    {/* Links 2 */}
                     <div>
-                        <h3 className="text-white font-bold mb-4">Contact</h3>
-                        <ul className="space-y-2 text-slate-400">
-                            <li>contact@escalya.fr</li>
-                            <li>+33 1 23 45 67 89</li>
-                            <li>Paris, France</li>
+                        <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Entreprise</h3>
+                        <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                            <li><Link href="/a-propos">À Propos</Link></li>
+                            <li><Link href="/contact">Contact</Link></li>
+                            <li><Link href="#">Carrières</Link></li>
+                            <li><Link href="#">Presse</Link></li>
                         </ul>
+                    </div>
+
+                    {/* Newsletter */}
+                    <div>
+                        <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Newsletter</h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">Inscrivez-vous pour recevoir nos offres exclusives.</p>
+                        <form className="flex gap-2">
+                            <input
+                                type="email"
+                                placeholder="Votre email"
+                                className="flex-1 rounded-md border border-slate-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-white"
+                            />
+                            <button className="rounded-md bg-slate-900 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-800">OK</button>
+                        </form>
                     </div>
                 </div>
 
-                {/* Copyright */}
-                <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-slate-500 text-sm">
-                        © {currentYear} Escalya. Tous droits réservés.
-                    </p>
-                    <div className="flex gap-6">
-                        <Link
-                            href="/mentions-legales"
-                            className="text-slate-500 hover:text-white text-sm transition-colors"
-                        >
-                            Mentions légales
-                        </Link>
-                        <Link
-                            href="/confidentialite"
-                            className="text-slate-500 hover:text-white text-sm transition-colors"
-                        >
-                            Confidentialité
-                        </Link>
-                        <Link
-                            href="/cgv"
-                            className="text-slate-500 hover:text-white text-sm transition-colors"
-                        >
-                            CGV
-                        </Link>
-                    </div>
+                <div className="border-t border-slate-200 dark:border-slate-800 pt-8 text-center text-sm text-slate-500 dark:text-slate-500">
+                    © {new Date().getFullYear()} Escalya. Tous droits réservés.
                 </div>
             </div>
         </footer>
