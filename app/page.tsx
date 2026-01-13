@@ -7,27 +7,27 @@ import PartnersSection from "@/components/home/PartnersSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
 
 export const metadata: Metadata = {
-  title: "Escalya | Séjours d'Exception Tout-Inclus",
-  description:
-    "Vivez des séjours tout-inclus dans les plus prestigieux domaines et châteaux de France. Une parenthèse hors du temps orchestrée par nos experts.",
-  openGraph: {
     title: "Escalya | Séjours d'Exception Tout-Inclus",
     description:
-      "Vivez des séjours tout-inclus dans les plus prestigieux domaines et châteaux de France.",
-    type: "website",
-  },
+        "Vivez des séjours tout-inclus dans les plus prestigieux domaines et châteaux de France. Une parenthèse hors du temps orchestrée par nos experts.",
+    openGraph: {
+        title: "Escalya | Séjours d'Exception Tout-Inclus",
+        description:
+            "Vivez des séjours tout-inclus dans les plus prestigieux domaines et châteaux de France.",
+        type: "website",
+    },
 };
 
 export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <LivingArtSection />
-      <FeaturedStays />
-      <TestimonialSection />
-      <PartnersSection />
-      <NewsletterSection />
-    </>
-  );
+    return (
+        <>
+            <HeroSection />
+            <LivingArtSection />
+            <FeaturedStays />
+            <TestimonialSection />
+            <PartnersSection />
+            <NewsletterSection />
+        </>
+    );
 }
 
