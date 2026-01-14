@@ -1,80 +1,57 @@
-"use client";
-
-import { useState } from "react";
-import { Icon } from "@/components/ui/Icon";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
-
 interface PropertyProps {
     title: string;
     location: string;
-    guests: number;
-    bedrooms: number;
-    price: string;
+    price: number;
     rating: number;
     image: string;
-    badges: string[];
+    alt: string;
+    badge1: string;
+    badge2: string;
 }
 
-export function PropertyCard({ title, location, guests, bedrooms, price, rating, image, badges }: PropertyProps) {
-    const [isFavorite, setIsFavorite] = useState(false);
-
+export function PropertyCard({ title, location, price, rating, image, alt, badge1, badge2 }: PropertyProps) {
     return (
-        <div className="group overflow-hidden rounded-xl bg-white shadow-md hover:shadow-xl transition-all dark:bg-slate-900">
-            {/* Image Container */}
-            <div className="relative h-64 overflow-hidden">
+        <div className="group cursor-pointer">
+            <div className="relative overflow-hidden rounded-2xl aspect-[4/5] mb-4">
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
                 <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-110"
+                    role="img"
+                    aria-label={alt}
                     style={{ backgroundImage: `url('${image}')` }}
                 />
-                <div className="absolute top-4 left-4 flex gap-2">
-                    {badges.map((badge) => (
-                        <Badge key={badge} variant="secondary" className="backdrop-blur-md bg-white/90 dark:bg-slate-950/80">
-                            {badge}
-                        </Badge>
-                    ))}
+                <div className="absolute top-4 right-4 z-20">
+                    <button
+                        className="size-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-red-500 transition-colors"
+                        aria-label="Ajouter aux favoris"
+                    >
+                        <span className="material-symbols-outlined text-[20px]">favorite</span>
+                    </button>
                 </div>
-                <button
-                    onClick={() => setIsFavorite(!isFavorite)}
-                    className="absolute top-4 right-4 h-8 w-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center transition-colors hover:bg-white text-slate-900"
-                >
-                    <Icon name="favorite" className={isFavorite ? "text-red-500" : "text-slate-400"} style={{ fontVariationSettings: isFavorite ? "'FILL' 1" : "'FILL' 0" }} />
-                </button>
+                <div className="absolute bottom-4 left-4 z-20 flex gap-2">
+                    <span className="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-bold border border-white/10">
+                        {badge1}
+                    </span>
+                    <span className="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-white text-xs font-bold border border-white/10">
+                        {badge2}
+                    </span>
+                </div>
             </div>
-
-            {/* Content */}
-            <div className="p-6">
-                <div className="flex justify-between items-start mb-2">
-                    <div>
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white">{title}</h3>
-                        <p className="flex items-center text-sm text-slate-500 dark:text-slate-400 mt-1">
-                            <Icon name="location_on" className="mr-1 text-base" />
-                            {location}
-                        </p>
-                    </div>
-                    <div className="flex items-center gap-1">
-                        <Icon name="star" className="text-yellow-400 text-sm" style={{ fontVariationSettings: "'FILL' 1" }} />
-                        <span className="font-semibold">{rating}</span>
+            <div className="space-y-1">
+                <div className="flex justify-between items-start">
+                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                        {title}
+                    </h3>
+                    <div className="flex items-center gap-1 text-white text-sm font-bold">
+                        <span className="material-symbols-outlined text-primary text-[18px] dark:text-white">star</span>
+                        {rating}
                     </div>
                 </div>
-
-                <div className="flex gap-4 my-4 py-4 border-t border-slate-100 dark:border-slate-800">
-                    <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-                        <Icon name="group" />
-                        <span>{guests} Voyageurs</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-                        <Icon name="bed" />
-                        <span>{bedrooms} Chambres</span>
-                    </div>
-                </div>
-
-                <div className="flex items-center justify-between mt-4">
-                    <div>
-                        <span className="block text-lg font-bold text-slate-900 dark:text-white">{price}</span>
-                    </div>
-                    <Button variant="outline" size="sm">Réserver</Button>
-                </div>
+                <p className="text-gray-400 text-sm">{location}</p>
+                <p className="text-white text-sm font-medium mt-2">
+                    <span className="font-bold">€{price.toLocaleString()}</span>{" "}
+                    <span className="text-gray-500 font-normal dark:text-white">/ nuit</span>
+                </p>
             </div>
         </div>
     );

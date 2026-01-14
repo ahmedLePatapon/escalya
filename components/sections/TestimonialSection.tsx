@@ -4,10 +4,10 @@ import { testimonial } from "@/data/testimonials";
 export default function TestimonialSection() {
     return (
         <section className="py-24 bg-slate-50 dark:bg-slate-900">
-            <div className="container mx-auto px-4 max-w-4xl text-center">
-                <Icon name="format_quote" className="text-6xl text-slate-300 dark:text-slate-700 mb-8" />
+            <div className="container mx-auto dark:text-white px-4 max-w-[800px] text-center">
+                <Icon name="format_quote" className="dark:text-white mb-8" style={{ fontSize: '3rem' }} />
 
-                <blockquote className="mb-10 text-2xl font-light italic text-slate-800 dark:text-slate-200 md:text-3xl leading-relaxed">
+                <blockquote className="mb-10 text-2xl italic leading-tight text-slate-800 dark:text-white md:text-4xl leading-relaxed font-serif">
                     "{testimonial.quote}"
                 </blockquote>
 
