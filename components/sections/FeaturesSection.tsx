@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function FeaturesSection() {
     return (
         <section className="py-20 bg-background-dark relative overflow-hidden">
@@ -15,11 +17,11 @@ export default function FeaturesSection() {
                             dédiée pour assurer votre confort absolu.
                         </p>
                     </div>
-                    <a className="text-primary font-bold flex items-center gap-2 group dark:text-white" href="#">
+                    <Link href="/concept" className="text-primary font-bold flex items-center gap-2 group dark:text-white" >
                         Découvrir notre concept
                         <span
                             className="material-symbols-outlined transition-transform group-hover:translate-x-1 dark:text-white">arrow_forward</span>
-                    </a>
+                    </Link>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <article
