@@ -11,8 +11,8 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Escalya - Séjours d'exception",
-  description: "Découvrez nos destinations exclusives et vivez des expériences uniques.",
-  keywords: "voyage luxe, villas, chalets, séjours exception, escalya",
+  description: "Découvrez nos séjours d'exception tout-inclus dans les plus prestigieuses et authentiques destinations.venez vivre des expériences uniques.",
+  keywords: "voyage luxe, villas, chalets, séjours exception, escalya, tout-inclus, destinations prestigieuses, expériences uniques",
 };
 
 export default function RootLayout({
